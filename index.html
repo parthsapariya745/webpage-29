@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Bangers&family=Baskervville:ital@0;1&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Enriqueta:wght@400;500;600;700&family=Gantari:ital,wght@0,100..900;1,100..900&family=Heebo:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Londrina+Outline&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nothing+You+Could+Do&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100..800&family=Unbounded:wght@200..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <!-- google fonts link -->
+
+    <!-- remix icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <!-- remix icon cdn -->
+  </head>
+  <style>
+    *{
+      font-family: "Roboto", serif;
+    }
+    .nav-menu a{
+      color: rgba(255, 255, 255, 0.7);
+      transition: .4s;
+    }
+    .nav-menu a:hover{
+      color: white;
+    }
+    .button-group button{
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      transition: .2s;
+    }
+    .button-group button:hover{
+      box-shadow: none;
+    }
+    .bg-img{
+      -webkit-box-shadow: inset 200px 200px 5px 400px rgba(7,121,228,0.89);
+      -moz-box-shadow: inset 200px 200px 5px 400px rgba(7,121,228,0.89);
+      box-shadow: inset 200px 200px 5px 400px rgba(7,121,228,0.89);
+    }
+    .card-list{
+      position: relative;
+    }
+    .card-list::before{
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      -webkit-box-shadow: inset 200px 200px 5px 400px rgba(7,121,228,0.89);
+      -moz-box-shadow: inset 200px 200px 5px 400px rgba(7,121,228,0.89);
+      box-shadow: inset 200px 200px 5px 400px rgba(7,121,228,0.89);
+      opacity: 0;
+      transition: .5s;
+    }
+    .card-list:hover::before{
+      opacity: 1;
+    }
+    .img-content{
+      opacity: 0;
+      transition: .5s;
+    }
+    .card-list:hover .img-content{
+      opacity: 1;
+    }
+    .h-txt{
+      transition: .4s !important;
+    }
+    .h-txt:hover{
+      color: #0779E4 !important;
+    }
+    .get{
+      transition: .4s !important;
+    }
+    .get:hover{
+      background-color: #0779E4 !important;
+      color: white !important;
+    }
+    .t-email::placeholder{
+      color: #bbbbbb;
+    }
+    .links .links-tag{
+      transition: .4s !important;
+    }
+    .links .links-tag:hover{
+      color: black !important;
+    }
+    .contact{
+      transition: .4s !important;
+    }
+    .contact:hover{
+      background-color: white !important;
+      color: black !important;
+    }
+    .f-links{
+      transition: .4s !important;
+    }
+    p:hover .f-links{
+      color: #0779E4 !important;
+    }
+    @media (max-width : 991px) {
+      .col-12 iframe{
+        height: 450px;
+      }
+    }
+  </style>
+  <body>
+    <div class="bg h-auto" style="background-color: #F8F8F8;">
+      <!-- header section -->
+        <header style="background-image: url(./Assets/bg_1.jpg); height: auto; background-size: cover; object-fit: cover; background-attachment: fixed;">
+            <nav>
+              <div class="container d-flex justify-content-between align-items-center" style="max-width: 1024px; height: 70px;">
+                <div class="nav-logo pt-3">
+                  <p class="text-light fs-5" style="font-weight: 800;">Kn.Ford</p>
+                </div>
+                <div class="nav-menu d-flex gap-4 gap-lg-5">
+                  <a href="#" class="text-decoration-none text-light fw-medium d-md-flex d-none">Home</a>
+                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">About</a>
+                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Services</a>
+                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Portfolio</a>
+                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Pricing</a>
+                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Blog</a>
+                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Contact</a>
+                  <i class="ri-menu-line d-md-none d-flex text-light fs-1"></i>
+                </div>
+              </div>
+            </nav>
+            <div class="container" style="max-width: 1024px; padding-block: 130px;">
+              <div class="hero-txt">
+                <div class="hi bg-light fw-bold py-1 rounded-2 text-center" style="width: 80px; color: #0779E4; font-size: 13px; letter-spacing: 1px;">Hi There!</div>
+                <h1 class="text-light fw-normal display-3">I am Keannu Ford <br class="d-sm-block d-none"> A Web Designer</h1>
+                <p class="pt-3" style="color: rgba(255, 255, 255, 0.7); line-height: 28px;">Far far away, behind the word mountains, far from the countries Vokalia and <br class="d-md-block d-none"> Consonantia, there live the blind texts.</p>
+                <div class="button-group d-sm-flex d-grid gap-sm-2 gap-0 mt-2">
+                  <button type="button" class="btn btn-lg fw-bold text-light d-flex justify-content-center gap-2 py-3 px-4 mb-3 mb-sm-0" style="cursor: pointer; font-size: 12px; background-color: #0779E4; letter-spacing: 1px;">HIRE ME <i class="ri-arrow-right-long-line"></i></button>
+                  <button type="button" class="btn bg-light btn-lg fw-bold d-flex justify-content-center gap-2 py-3 px-4" style="cursor: pointer; font-size: 12px; color: #0779E4; letter-spacing: 1px;">VIEW PORTFOLIO <i class="ri-arrow-right-long-line"></i></button>
+                </div>
+                <div class="social d-flex gap-4 mt-5 d-sm-flex d-none">
+                  <div class="s-box"><a href="#" class="text-decoration-none text-light fw-bold" style="font-size: 13px; letter-spacing: 1px;">+ FACEBOOK</a></div>
+                  <div class="s-box"><a href="#" class="text-decoration-none text-light fw-bold" style="font-size: 13px; letter-spacing: 1px;">+ TWITTER</a></div>
+                  <div class="s-box"><a href="#" class="text-decoration-none text-light fw-bold" style="font-size: 13px; letter-spacing: 1px;">+ LINKEDIN</a></div>
+                </div>
+              </div>
+            </div>
+        </header>
+      <!-- header section -->
+
+      <!-- main section -->
+        <main>
+          <!-- story part -->
+          <div class="container" style="max-width: 1024px; padding-block: 120px;">
+            <div class="row">
+              <div class="col-md-6 col-12 m-0 py-0">
+                <img src="./Assets/about.jpg" class="object-fit-cover" width="100%" height="550px" alt="">
+              </div>
+              <div class="col-md-6 col-12 m-0" style="padding: 32px;">  
+                <div class="d-flex flex-sm-nowrap flex-wrap justify-content-sm-start justify-content-center gap-2">
+                  <div class="text-light text-center fw-bold rounded-2 py-2 px-3" style="background-color: #0779E4; font-size: 13px; cursor: pointer;">ABOUT ME</div>
+                  <div class="bg-white text-center fw-bold rounded-2 py-2 px-3" style="font-size: 13px; color: #8b8b8b; cursor: pointer;">SKILLS</div>
+                  <div class="bg-white text-center fw-bold rounded-2 py-2 px-3" style="font-size: 13px; color: #8b8b8b; cursor: pointer;">EXPERIENCE</div>
+                </div>
+                <h2 class="fw-bold fs-1 pt-4">My Story</h2>
+                <p class="pt-3" style="color: #999999; line-height: 28px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                <h3 class="fs-4 fw-bold" style="line-height: 35px;">I Do Web Design & Developement since I was 18 Years Old</h3>
+                <p class="pt-3" style="color: #999999; line-height: 28px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              </div>
+            </div>
+          </div>
+          <!-- story part -->
+
+          <!-- services section  -->
+          <div class="container" style="max-width: 1024px; padding-block: 120px;">
+            <p class="fw-bold text-center" style="font-size: 13px; color: #0779E4; line-height: 0px;">SERVICES</p>
+            <h2 class="fw-bold fs-1 text-center">This is My Expertise, The <br> Services I'll Provide My Clients</h2>
+            <div class="row" style="margin-top: 60px;">
+              <div class="col-md-4 col-12 mb-3 mb-md-0">
+                <div class="card border-0 p-4">
+                  <div class="card-body">
+                    <img src="./Assets/img1.png" class="object-fit-cover" width="75px" alt="">
+                    <h2 class="fw-bold fs-5 pt-3" style="color: #0779E4;">UI & UX Design</h2>
+                    <p style="color: #999999; padding-top: 5px; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and   Consonantia, there live the blind texts.</p>
+                    <p><a href="#" class="text-decoration-none" style="color: #0779E4;">Read more <i class="ri-arrow-right-long-fill" style="color: #0779E4;"></i></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-12 mb-3 mb-md-0">
+                <div class="card border-0 p-4">
+                  <div class="card-body">
+                    <img src="./Assets/img2.png" class="object-fit-cover" width="75px" alt="">
+                    <h2 class="fw-bold fs-5 pt-3" style="color: #0779E4;">Web Development</h2>
+                    <p style="color: #999999; padding-top: 5px; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p><a href="#" class="text-decoration-none" style="color: #0779E4;">Read more <i class="ri-arrow-right-long-fill" style="color: #0779E4;"></i>
+                    </a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-12 mb-3 mb-md-0">
+                <div class="card border-0 p-4">
+                  <div class="card-body">
+                    <img src="./Assets/img3.png" class="object-fit-cover" width="75px" alt="">
+                    <h2 class="fw-bold fs-5 pt-3" style="color: #0779E4;">Graphic Design</h2>
+                    <p style="color: #999999; padding-top: 5px; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p><a href="#" class="text-decoration-none" style="color: #0779E4;">Read more <i class="ri-arrow-right-long-fill" style="color: #0779E4;"></i>
+                    </a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list mt-5 mx-auto" style="max-width: 650px;">
+              <strong class="fw-bold" style="color: #999999;">Have any works you want to done by me? <span style="color: #0779E4; cursor: pointer;">Contact Me</span>
+              </strong>
+              <p class="pt-3" style="color: #999999; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+          <!-- services section  -->
+
+          <!-- project section  -->
+          <div class="container-fluid bg-img object-fit-cover" style="background-image: url(./Assets/bg_3.jpg); background-size: cover; background-position: center;
+            padding-block: 65px;">
+            <div class="row mx-auto" style="max-width: 1024px;">
+              <div class="col-lg-4 col-sm-6 col-12 m-0 p-0 d-flex justify-content-sm-start justify-content-center">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body d-flex align-items-center gap-3">
+                    <div class="left">
+                      <img src="./Assets/p-1.png" width="75px" alt="">
+                    </div>
+                    <div class="right">
+                      <h2 class="text-light fw-bold" style="font-size: 38px;">3,000</h2>
+                      <p class="text-uppercase text-light fw-bold" style="font-size: 14px; line-height: 8px;">Happy Customer</p> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12 m-0 p-0 d-flex justify-content-sm-start justify-content-center">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body d-flex align-items-center gap-3">
+                    <div class="left">
+                      <img src="./Assets/p-2.png" width="75px" alt="">
+                    </div>
+                    <div class="right">
+                      <h2 class="text-light fw-bold" style="font-size: 38px;">320</h2>
+                      <p class="text-uppercase text-light fw-bold" style="font-size: 14px; line-height: 8px;">Project Completed</p> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12 m-0 p-0 d-flex justify-content-sm-start justify-content-center">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body d-flex align-items-center gap-3">
+                    <div class="left">
+                      <img src="./Assets/p-3.png" width="75px" alt="">
+                    </div>
+                    <div class="right">
+                      <h2 class="text-light fw-bold" style="font-size: 38px;">1,000</h2>
+                      <p class="text-uppercase text-light fw-bold" style="font-size: 14px; line-height: 8px;">Cups of Coffee</p> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- project section  -->
+
+          <!-- Portfolio section -->
+          <div class="container" style="max-width: 1024px; padding-block: 120px;">
+            <p class="fw-bold text-center" style="font-size: 13px; color: #0779E4; line-height: 0px;">PORTFOLIO</p>
+            <h2 class="fw-bold fs-1 text-center">My Latest Work</h2>
+            <div class="row mt-5">
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <div class="card-list d-flex align-items-center justify-content-center">
+                      <img src="./Assets/project-1.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                      <div class="img-content text-center" style="position: absolute;">
+                        <p class="text-light fs-5 pt-4" style="line-height: 23px;">Branding & Illustration Design</p>
+                        <p class="text-uppercase fw-semibold" style="font-size: 12px; color: rgba(255, 255, 255, 0.7); letter-spacing: 2px;">Web Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <div class="card-list d-flex align-items-center justify-content-center">
+                      <img src="./Assets/project-2.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                      <div class="img-content text-center" style="position: absolute;">
+                        <p class="text-light fs-5 pt-4" style="line-height: 23px;">Branding & Illustration Design</p>
+                        <p class="text-uppercase fw-semibold" style="font-size: 12px; color: rgba(255, 255, 255, 0.7); letter-spacing: 2px;">Web Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <div class="card-list d-flex align-items-center justify-content-center">
+                      <img src="./Assets/project-3.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                      <div class="img-content text-center" style="position: absolute;">
+                        <p class="text-light fs-5 pt-4" style="line-height: 23px;">Branding & Illustration Design</p>
+                        <p class="text-uppercase fw-semibold" style="font-size: 12px; color: rgba(255, 255, 255, 0.7); letter-spacing: 2px;">Web Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <div class="card-list d-flex align-items-center justify-content-center">
+                      <img src="./Assets/project-4.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                      <div class="img-content text-center" style="position: absolute;">
+                        <p class="text-light fs-5 pt-4" style="line-height: 23px;">Branding & Illustration Design</p>
+                        <p class="text-uppercase fw-semibold" style="font-size: 12px; color: rgba(255, 255, 255, 0.7); letter-spacing: 2px;">Web Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <div class="card-list d-flex align-items-center justify-content-center">
+                      <img src="./Assets/project-5.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                      <div class="img-content text-center" style="position: absolute;">
+                        <p class="text-light fs-5 pt-4" style="line-height: 23px;">Branding & Illustration Design</p>
+                        <p class="text-uppercase fw-semibold" style="font-size: 12px; color: rgba(255, 255, 255, 0.7); letter-spacing: 2px;">Web Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <div class="card-list d-flex align-items-center justify-content-center">
+                      <img src="./Assets/project-6.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                      <div class="img-content text-center" style="position: absolute;">
+                        <p class="text-light fs-5 pt-4" style="line-height: 23px;">Branding & Illustration Design</p>
+                        <p class="text-uppercase fw-semibold" style="font-size: 12px; color: rgba(255, 255, 255, 0.7); letter-spacing: 2px;">Web Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio section -->
+
+          <!-- Testimonial section  -->
+          <div class="container" style="max-width: 1024px; padding-block: 120px;">
+            <p class="fw-bold text-center text-uppercase" style="font-size: 13px; color: #0779E4; line-height: 0px;">Testimonial</p>
+            <h2 class="fw-bold fs-1 text-center">Our Successful Students</h2>
+            <div class="row" style="margin-top: 70px;">
+              <div class="col-lg-4 col-md-6 col-12 mb-lg-0 mb-4">
+                <div class="card border-0">
+                  <div class="card-body p-4">
+                    <div class="avt-box d-flex align-items-center gap-3">
+                      <div class="avt-img position-relative d-flex justify-content-end">
+                        <img src="./Assets/person_1.jpg" width="78px" class="rounded-circle object-fit-cover" alt="">
+                        <div class="coma position-absolute bottom-0 text-light rounded-circle d-flex align-items-center justify-content-center fs-5" style="height: 28px; width: 28px; background-color: #0779E4;"><i class="ri-double-quotes-l"></i></div>
+                      </div>
+                      <div class="avt-txt d-flex flex-column justify-content-center">
+                        <p class="text-uppercase fw-semibold" style="font-size: 20px; line-height: 13px; padding-top: 18px;">Roger Scott</p>
+                        <p class="text-uppercase fw-medium" style="color: #0779E4; font-size: 13px;">Marketing Manager</p>
+                      </div>
+                    </div>
+                    <p class="pt-4" style="color: #999999; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12 mb-lg-0 mb-4">
+                <div class="card border-0">
+                  <div class="card-body p-4">
+                    <div class="avt-box d-flex align-items-center gap-3">
+                      <div class="avt-img position-relative d-flex justify-content-end">
+                        <img src="./Assets/person_2.jpg" width="78px" class="rounded-circle object-fit-cover" alt="">
+                        <div class="coma position-absolute bottom-0 text-light rounded-circle d-flex align-items-center justify-content-center fs-5" style="height: 28px; width: 28px; background-color: #0779E4;"><i class="ri-double-quotes-l"></i></div>
+                      </div>
+                      <div class="avt-txt d-flex flex-column justify-content-center">
+                        <p class="text-uppercase fw-semibold" style="font-size: 20px; line-height: 13px; padding-top: 18px;">Roger Scott</p>
+                        <p class="text-uppercase fw-medium" style="color: #0779E4; font-size: 13px;">Marketing Manager</p>
+                      </div>
+                    </div>
+                    <p class="pt-4" style="color: #999999; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12 mb-lg-0 mb-4">
+                <div class="card border-0">
+                  <div class="card-body p-4">
+                    <div class="avt-box d-flex align-items-center gap-3">
+                      <div class="avt-img position-relative d-flex justify-content-end">
+                        <img src="./Assets/person_3.jpg" width="78px" class="rounded-circle object-fit-cover" alt="">
+                        <div class="coma position-absolute bottom-0 text-light rounded-circle d-flex align-items-center justify-content-center fs-5" style="height: 28px; width: 28px; background-color: #0779E4;"><i class="ri-double-quotes-l"></i></div>
+                      </div>
+                      <div class="avt-txt d-flex flex-column justify-content-center">
+                        <p class="text-uppercase fw-semibold" style="font-size: 20px; line-height: 13px; padding-top: 18px;">Roger Scott</p>
+                        <p class="text-uppercase fw-medium" style="color: #0779E4; font-size: 13px;">Marketing Manager</p>
+                      </div>
+                    </div>
+                    <p class="pt-4" style="color: #999999; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial section  -->
+
+          <!-- blog section  -->
+          <div class="container" style="max-width: 1024px; padding-block: 120px;">
+            <p class="fw-bold text-center text-uppercase" style="font-size: 13px; color: #0779E4; line-height: 0px;">Our Blog</p>
+            <h2 class="fw-bold fs-1 text-center">Recent From Blog</h2>
+            <div class="row mt-5">
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <img src="./Assets/image_1.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                    <div class="card-dtl rounded-bottom-2" style="background-color: white; padding: 30px;">
+                      <div class="time d-flex gap-3">
+                        <p style="color: #999999; font-size: 13px;" class="fw-semibold"><i class="ri-calendar-2-line" style="color: #0779E4;"></i> JAN. 18, 2021</p>
+                        <p style="color: #0779E4; font-size: 13px;" class="text-uppercase fw-semibold"><i class="ri-chat-1-fill"></i> 3 Comments</p>
+                      </div>
+                      <p><a href="#" class="h-txt text-decoration-none text-black fw-medium" style="font-size: 20px;">Tips About Creating A New Web Design</a></p>
+                      <p style="color: #999999; line-height: 28px;">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <img src="./Assets/image_2.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                    <div class="card-dtl rounded-bottom-2" style="background-color: white; padding: 30px;">
+                      <div class="time d-flex gap-3">
+                        <p style="color: #999999; font-size: 13px;" class="fw-semibold"><i class="ri-calendar-2-line" style="color: #0779E4;"></i> JAN. 18, 2021</p>
+                        <p style="color: #0779E4; font-size: 13px;" class="text-uppercase fw-semibold"><i class="ri-chat-1-fill"></i> 3 Comments</p>
+                      </div>
+                      <p><a href="#" class="h-txt text-decoration-none text-black fw-medium" style="font-size: 20px;">Tips About Creating A New Web Design</a></p>
+                      <p style="color: #999999; line-height: 28px;">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <img src="./Assets/image_3.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                    <div class="card-dtl rounded-bottom-2" style="background-color: white; padding: 30px;">
+                      <div class="time d-flex gap-3">
+                        <p style="color: #999999; font-size: 13px;" class="fw-semibold"><i class="ri-calendar-2-line" style="color: #0779E4;"></i> JAN. 18, 2021</p>
+                        <p style="color: #0779E4; font-size: 13px;" class="text-uppercase fw-semibold"><i class="ri-chat-1-fill"></i> 3 Comments</p>
+                      </div>
+                      <p><a href="#" class="h-txt text-decoration-none text-black fw-medium" style="font-size: 20px;">Tips About Creating A New Web Design</a></p>
+                      <p style="color: #999999; line-height: 28px;">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <img src="./Assets/image_4.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                    <div class="card-dtl rounded-bottom-2" style="background-color: white; padding: 30px;">
+                      <div class="time d-flex gap-3">
+                        <p style="color: #999999; font-size: 13px;" class="fw-semibold"><i class="ri-calendar-2-line" style="color: #0779E4;"></i> JAN. 18, 2021</p>
+                        <p style="color: #0779E4; font-size: 13px;" class="text-uppercase fw-semibold"><i class="ri-chat-1-fill"></i> 3 Comments</p>
+                      </div>
+                      <p><a href="#" class="h-txt text-decoration-none text-black fw-medium" style="font-size: 20px;">Tips About Creating A New Web Design</a></p>
+                      <p style="color: #999999; line-height: 28px;">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <img src="./Assets/image_5.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                    <div class="card-dtl rounded-bottom-2" style="background-color: white; padding: 30px;">
+                      <div class="time d-flex gap-3">
+                        <p style="color: #999999; font-size: 13px;" class="fw-semibold"><i class="ri-calendar-2-line" style="color: #0779E4;"></i> JAN. 18, 2021</p>
+                        <p style="color: #0779E4; font-size: 13px;" class="text-uppercase fw-semibold"><i class="ri-chat-1-fill"></i> 3 Comments</p>
+                      </div>
+                      <p><a href="#" class="h-txt text-decoration-none text-black fw-medium" style="font-size: 20px;">Tips About Creating A New Web Design</a></p>
+                      <p style="color: #999999; line-height: 28px;">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 p-0 m-0">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-body" style="padding: 12px;">
+                    <img src="./Assets/image_6.jpg" width="100%" height="335px" class="object-fit-cover" alt="">
+                    <div class="card-dtl rounded-bottom-2" style="background-color: white; padding: 30px;">
+                      <div class="time d-flex gap-3">
+                        <p style="color: #999999; font-size: 13px;" class="fw-semibold"><i class="ri-calendar-2-line" style="color: #0779E4;"></i> JAN. 18, 2021</p>
+                        <p style="color: #0779E4; font-size: 13px;" class="text-uppercase fw-semibold"><i class="ri-chat-1-fill"></i> 3 Comments</p>
+                      </div>
+                      <p><a href="#" class="h-txt text-decoration-none text-black fw-medium" style="font-size: 20px;">Tips About Creating A New Web Design</a></p>
+                      <p style="color: #999999; line-height: 28px;">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- blog section  -->
+
+          <!-- price section  -->
+          <div class="container" style="max-width: 1024px; padding-block: 120px;">
+            <p class="fw-bold text-center text-uppercase" style="font-size: 13px; color: #0779E4; line-height: 0px;">My Pricing</p>
+            <h2 class="fw-bold fs-1 text-center">Pricing & Packages</h2>
+            <div class="row" style="margin-top: 60px;">
+              <div class="col-md-4 col-12 mb-3 mb-md-0">
+                <div class="card border-0 p-4">
+                  <div class="card-body text-center">
+                    <p class="text-uppercase fw-bold" style="color: #0779E4; font-size: 14px;">Basic Plan</p>
+                    <p style="color: #0779E4;" class="display-5 fw-semibold d-flex justify-content-center gap-1 align-items-center"><sup class="fw-normal fs-4">$
+                    </sup>49K</p>
+                    <p style="color: #999999; padding-top: 18px; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and   Consonantia, there live the blind texts.</p>
+                    <button class="get bg-transparent px-5 fw-semibold" style="border: 1px solid #0779E4; color: #0779E4; padding-block: 15px; font-size: 12px; letter-spacing: 1.5px; margin-top: 20px; border-radius: 5px;">GET STARTED</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-12 mb-3 mb-md-0">
+                <div class="card border-0 p-4">
+                  <div class="card-body text-center">
+                    <p class="text-uppercase fw-bold" style="color: #0779E4; font-size: 14px;">Beginner Plan</p>
+                    <p style="color: #0779E4;" class="display-5 fw-semibold d-flex justify-content-center gap-1 align-items-center"><sup class="fw-normal fs-4">$
+                    </sup>79K</p>
+                    <p style="color: #999999; padding-top: 18px; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and   Consonantia, there live the blind texts.</p>
+                    <button class="get bg-transparent px-5 fw-semibold" style="border: 1px solid #0779E4; color: #0779E4; padding-block: 15px; font-size: 12px; letter-spacing: 1.5px; margin-top: 20px; border-radius: 5px;">GET STARTED</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-12 mb-3 mb-md-0">
+                <div class="card border-0 p-4">
+                  <div class="card-body text-center">
+                    <p class="text-uppercase fw-bold" style="color: #0779E4; font-size: 14px;">Premium Plan</p>
+                    <p style="color: #0779E4;" class="display-5 fw-semibold d-flex justify-content-center gap-1 align-items-center"><sup class="fw-normal fs-4">$
+                    </sup>109K</p>
+                    <p style="color: #999999; padding-top: 18px; line-height: 30px;">Far far away, behind the word mountains, far from the countries Vokalia and   Consonantia, there live the blind texts.</p>
+                    <button class="get bg-transparent px-5 fw-semibold" style="border: 1px solid #0779E4; color: #0779E4; padding-block: 15px; font-size: 12px; letter-spacing: 1.5px; margin-top: 20px; border-radius: 5px;">GET STARTED</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- price section  -->
+
+          <!-- contact section  -->
+          <div class="container-fluid" style="padding-top: 120px;">
+            <div class="row">
+              <div class="col-lg-6 col-12 order-2 order-lg-1 p-0 m-0"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d77146.15381392578!2d70.80590582171537!3d22.278350703701886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1737639761009!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+              <div class="col-lg-6 col-12 order-1 order-lg-2 p-lg-5 py-5 m-0" style="background-color: white;">
+                <h3 style="font-size: 30px;" class="fw-normal">Contact us</h3>
+                <p style="color: #999999; padding-top: 5px;">We're open for any suggestion or just to have a chat</p>
+                <div class="row m-0 p-0">
+                  <div class="col-sm-4 m-0 p-0">
+                    <p class="text-uppercase fw-semibold" style="font-size: 13px; margin: 0px 0px 5px;">My Address:</p>
+                    <p style="color: #999999; line-height: 30px;">198 West 21th Street, Suite 721 New York NY 10016</p>
+                  </div>
+                  <div class="col-sm-4 px-sm-3 p-0 m-0">
+                    <p class="text-uppercase fw-semibold" style="font-size: 13px; margin: 0px 0px 5px;">My Email:</p>
+                    <p>info@yoursite.com</p>
+                  </div>
+                  <div class="col-sm-4 px-sm-3 p-0 m-0">
+                    <p class="text-uppercase fw-semibold" style="font-size: 13px; margin: 0px 0px 5px;">My Phone:</p>
+                    <p>+ 1235 2355 98</p>
+                  </div>
+                </div>
+                <form action="">
+                  <div class="d-flex flex-lg-row flex-column gap-lg-4 gap-2" style="margin-bottom: 10px;">
+                    <input type="text" class="t-email w-100 rounded-1" style="height: 45px; outline: none; border: 1px solid #d0d0d0; padding-left: 12px; font-size: 14px;" placeholder="Name" required>
+                    <input type="email" class="t-email w-100 rounded-1" style="height: 45px; outline: none; border: 1px solid #d0d0d0; padding-left: 12px; font-size: 14px;" placeholder="Email" required>
+                  </div>
+                  <input type="text" class="t-email w-100" style="height: 45px; margin-bottom: 10px; border-radius: 5px; outline: none; border: 1px solid #d0d0d0; padding-left: 12px; font-size: 14px;" placeholder="Subject" required>
+                  <textarea name="" id="" class="t-email w-100" rows="4" placeholder="Create a message here" style="font-size: 14px; padding: 12px 0px 0px 12px; outline: none; border: 1px solid #d0d0d0; margin-bottom: 4px; border-radius: 5px;"></textarea>
+                  <button style="background-color: #0779E4; color: white; height: 38px; font-size: 12px; letter-spacing: 1.5px;" class="rounded-1 border-0 fw-semibold px-3">SEND MESSAGE</button>
+                </form>
+                <h3 style="font-size: 20px;" class="fw-normal pt-5">Follow me here</h3>
+                <div class="links d-flex flex-wrap justify-content-sm-start justify-content-center gap-3 mt-3">
+                  <a href="#" class="links-tag text-uppercase text-decoration-none fw-semibold" style="color: #0779E4; font-size: 13px;">Facebook</a>
+                  <a href="#" class="links-tag text-uppercase text-decoration-none fw-semibold" style="color: #0779E4; font-size: 13px;">Twitter</a>
+                  <a href="#" class="links-tag text-uppercase text-decoration-none fw-semibold" style="color: #0779E4; font-size: 13px;">Instagram</a>
+                  <a href="#" class="links-tag text-uppercase text-decoration-none fw-semibold" style="color: #0779E4; font-size: 13px;">Dribbble</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid py-5" style="background-color: #0779E4;">
+            <div class="container" style="max-width: 1024px;">
+              <div class="row">
+                <div class="col-sm-7 m-0 mb-sm-0 mb-3">
+                  <h2 class="fw-medium text-light" style="font-size: 27px;">Have any works you want to done by me?</h2>
+                  <p class="m-0" style="color: rgba(255, 255, 255, 0.7);">Far far away, behind the word mountains</p>
+                </div>
+                <div class="col-sm-5 m-0 d-flex justify-content-sm-end justify-content-center align-items-center">
+                  <button class="contact btn btn-lg bg-transparent border-1 border-light text-light fw-bold rounded-1 w-75" style="font-size: 12px; 
+                  letter-spacing: 1.5px; height: 50px;">CONTACT ME</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- contact section  -->
+
+          <!-- footer -->
+          <footer style="background-color: #EEEEEE;">
+            <div class="container" style="max-width: 1024px; padding-block: 75px;">
+              <div class="row">
+                <div class="col-md-4 col-sm-6 mb-sm-0 mb-4">
+                  <p style="font-size: 22px; font-weight: 800;">Kn.Ford</p>
+                  <p style="color: #999999; padding-top: 20px; line-height: 28px;">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                  <div class="iconbox d-flex gap-2">
+                    <div class="icon rounded-circle text-light d-flex align-items-center justify-content-center" style="height: 40px; width: 40px; cursor: pointer; background-color: #0779E4;"><i class="ri-twitter-fill"></i></div>
+                    <div class="icon rounded-circle text-light d-flex align-items-center justify-content-center" style="height: 40px; width: 40px; cursor: pointer; background-color: #0779E4;"><i class="ri-facebook-fill"></i></div>
+                    <div class="icon rounded-circle text-light d-flex align-items-center justify-content-center" style="height: 40px; width: 40px; cursor: pointer; background-color: #0779E4; padding-left: 1px;"><i class="ri-instagram-line"></i></div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-sm-5 mb-md-0 mb-3">
+                  <h2 class="fw-medium" style="font-size: 18px;">Services</h2>
+                  <p style="padding-top: 35px;"><a href="#" class="text-decoration-none" style="color: #7a7a7a;"><i class="ri-arrow-right-long-line"
+                  style="color: #0779E4; font-size: 14px;"></i>&nbsp;&nbsp;<span class="f-links">Web Design</span></a></p>
+                  <p><a href="#" class="text-decoration-none" style="color: #7a7a7a;"><i class="ri-arrow-right-long-line" style="color: #0779E4; 
+                  font-size: 14px;"></i>&nbsp;&nbsp;<span class="f-links">Web Development</span></a></p>
+                  <p><a href="#" class="text-decoration-none" style="color: #7a7a7a;"><i class="ri-arrow-right-long-line" style="color: #0779E4; 
+                  font-size: 14px;"></i>&nbsp;&nbsp;<span class="f-links">Graphic Design</span></a></p>
+                  <p><a href="#" class="text-decoration-none" style="color: #7a7a7a;"><i class="ri-arrow-right-long-line" style="color: #0779E4;
+                  font-size: 14px;"></i>&nbsp;&nbsp;<span class="f-links">UI/UX Design</span></a></p>
+                </div>
+                <div class="col-md-4 px-md-5">
+                  <h2 class="fw-medium" style="font-size: 18px;">Have a Questions?</h2>
+                  <p class="d-flex gap-3" style="padding-top: 35px; color: #3d3d3d; font-size: 14px; line-height: 26px; cursor: pointer;"><i class="ri-map-2-fill" style="color: #0779E4; font-size: 20px;"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                  <p class="d-flex gap-3 align-items-center" style="color: #3d3d3d; font-size: 14px; cursor: pointer;"><i class="ri-phone-fill" style="color: #0779E4; font-size: 20px;"></i>+2 392 3929 210</p>
+                  <p class="d-flex gap-3 align-items-center" style="color: #3d3d3d; font-size: 14px; cursor: pointer;"><i class="ri-telegram-2-fill" 
+                  style="color: #0779E4; font-size: 20px;"></i>info@yourdomain.com</p>
+                </div>
+              </div>
+            </div>
+          </footer>  
+          <div class="container-fluid py-5" style="background-color: #E9E9E9;">
+            <p class="text-center m-0" style="font-size: 14px; color: #999999;">Copyright ©2025 All rights reserved | This template is made with <i class="ri-heart-fill" style="font-size: 17px;"></i> by <span style="color: #0779E4; cursor: pointer;">Colorlib</span></p>
+          </div>
+          <!-- footer -->
+        </main> 
+      <!-- main section -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
