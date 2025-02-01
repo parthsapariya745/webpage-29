@@ -21,11 +21,11 @@
     *{
       font-family: "Roboto", serif;
     }
-    .nav-menu a{
+    .nav-link{
       color: rgba(255, 255, 255, 0.7);
       transition: .4s;
     }
-    .nav-menu a:hover{
+    .nav-link:hover{
       color: white;
     }
     .button-group button{
@@ -106,32 +106,53 @@
         height: 450px;
       }
     }
+    @media (max-width : 768px) {
+      .navigation{
+        background-color: #0779E4;
+      }
+    }
   </style>
   <body>
     <div class="bg h-auto" style="background-color: #F8F8F8;">
       <!-- header section -->
         <header style="background-image: url(./Assets/bg_1.jpg); height: auto; background-size: cover; object-fit: cover; background-attachment: fixed;">
-            <nav>
-              <div class="container d-flex justify-content-between align-items-center" style="max-width: 1024px; height: 70px;">
-                <div class="nav-logo pt-3">
-                  <p class="text-light fs-5" style="font-weight: 800;">Kn.Ford</p>
-                </div>
-                <div class="nav-menu d-flex gap-4 gap-lg-5">
-                  <a href="#" class="text-decoration-none text-light fw-medium d-md-flex d-none">Home</a>
-                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">About</a>
-                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Services</a>
-                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Portfolio</a>
-                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Pricing</a>
-                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Blog</a>
-                  <a href="#" class="text-decoration-none fw-medium d-md-flex d-none">Contact</a>
-                  <i class="ri-menu-line d-md-none d-flex text-light fs-1"></i>
-                </div>
+          <nav class="navbar navbar-expand-md">
+            <div class="container navigation fixed-top py-md-3 py-1" style="max-width: 1024px;">
+              <a class="navbar-brand text-light fs-5" style="font-weight: 800;" href="#">kn.ford</a>
+              <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="ri-menu-line text-light fs-1"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto d-flex align-items-center gap-md-4 gap-2">
+                  <li class="nav-item">
+                    <a class="nav-link active text-light fw-medium" style="font-size: 15px;" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-medium" style="font-size: 15px;" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-medium" style="font-size: 15px;" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-medium" style="font-size: 15px;" href="#">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-medium" style="font-size: 15px;" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-medium" style="font-size: 15px;" href="#">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-medium" style="font-size: 15px;" href="#">Contact</a>
+                  </li>
+                </ul>
               </div>
-            </nav>
-            <div class="container" style="max-width: 1024px; padding-block: 130px;">
+            </div>
+          </nav>
+            <div class="container" style="max-width: 1024px; padding-block: 157px;">
               <div class="hero-txt">
                 <div class="hi bg-light fw-bold py-1 rounded-2 text-center" style="width: 80px; color: #0779E4; font-size: 13px; letter-spacing: 1px;">Hi There!</div>
-                <h1 class="text-light fw-normal display-3">I am Keannu Ford <br class="d-sm-block d-none"> A Web Designer</h1>
+                <h1 class="text-light fw-normal display-3">I am Parth Sapariya <br class="d-sm-block d-none"><span class="type">A Web Designer & Developer</span></h1>
                 <p class="pt-3" style="color: rgba(255, 255, 255, 0.7); line-height: 28px;">Far far away, behind the word mountains, far from the countries Vokalia and <br class="d-md-block d-none"> Consonantia, there live the blind texts.</p>
                 <div class="button-group d-sm-flex d-grid gap-sm-2 gap-0 mt-2">
                   <button type="button" class="btn btn-lg fw-bold text-light d-flex justify-content-center gap-2 py-3 px-4 mb-3 mb-sm-0" style="cursor: pointer; font-size: 12px; background-color: #0779E4; letter-spacing: 1px;">HIRE ME <i class="ri-arrow-right-long-line"></i></button>
@@ -643,7 +664,8 @@
             </div>
           </footer>  
           <div class="container-fluid py-5" style="background-color: #E9E9E9;">
-            <p class="text-center m-0" style="font-size: 14px; color: #999999;">Copyright ©2025 All rights reserved | This template is made with <i class="ri-heart-fill" style="font-size: 17px;"></i> by <span style="color: #0779E4; cursor: pointer;">Colorlib</span></p>
+            <p class="text-center m-0" style="font-size: 14px; color: #999999;">Copyright ©2025 All rights reserved | This template is made with <i class="ri-heart-fill" style="font-size: 17px;"></i> by <a href="https://www.instagram.com/parth_sapariya_?igsh=Y3ZiYm5lcm12djQw" target="_blank" class="text-decoration-none" style="color: #0779E4;">parth_sapariya_</a>
+            </p>
           </div>
           <!-- footer -->
         </main> 
